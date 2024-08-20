@@ -1,0 +1,16 @@
+#include<iostream>
+#include<cmath>
+int main(){
+    double number,cuberoot;
+    std::cout<< "enter the number:";
+    std::cin>>number;
+    if(number>0){
+        cuberoot=cbrt(number);
+        std::cout<<"the cuberoot of"<<number<<"is"<<cuberoot<<std::endl;
+    }
+    else{
+        cuberoot=cbrt(number);
+        std::cout<<"the cuberoot of"<<number<<"is" <<cuberoot<<std::endl;
+    }
+    return 0;
+}
