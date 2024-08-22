@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int number, N;
+    cout << "Enter the number: ";
+    cin >> number;
+    cout << "Enter the bit position N (0-based index): ";
+    cin >> N;
+    if (N < 0) {
+        cout << "Invalid bit position!" << endl;
+    } else {
+        int mask = 1 << N;
+        number = number | mask;
+        cout << "The number after setting the " << N << "th bit is: " << number << endl;
+    }
+
+    return 0;
+}
