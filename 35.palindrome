@@ -1,0 +1,25 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+inline bool isPalindrome(string str) {
+    string reversedStr = str;
+    reverse(reversedStr.begin(), reversedStr.end());
+    return (str == reversedStr);
+}
+
+int main() {
+    string inputString;
+    cout << "Enter the string: ";
+    cin >> inputString;
+
+    transform(inputString.begin(), inputString.end(), inputString.begin(), ::toupper);
+
+    if (isPalindrome(inputString)) {
+        cout << "THE GIVEN STRING IS PALINDROME" << endl;
+    } else {
+        cout << "THE GIVEN STRING IS NOT PALINDROME" << endl;
+    }
+
+    return 0;
+}
