@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+float calculateInterest(float principal, int years, bool isSeniorCitizen) {
+    float rateOfInterest = isSeniorCitizen ? 12.0f : 10.0f;
+    return (principal * rateOfInterest * years) / 100;
+}
+
+int main() {
+    float principal;
+    int years;
+    char seniorCitizenFlag;
+    bool isSeniorCitizen;
+
+    cout << "Enter the principal amount: ";
+    cin >> principal;
+    cout << "Enter the number of years: ";
+    cin >> years;
+    cout << "Is customer senior citizen (y/n): ";
+    cin >> seniorCitizenFlag;
+
+    isSeniorCitizen = (seniorCitizenFlag == 'y' || seniorCitizenFlag == 'Y');
+
+    float interest = calculateInterest(principal, years, isSeniorCitizen);
+
+    cout << "Interest: " << interest << endl;
+
+return 0;
+}
