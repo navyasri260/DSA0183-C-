@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+bool isPrime(int n) {
+    if (n <= 1) return false;
+    for (int i = 2; i <= n / 2; i++) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+
+class PrimeCheck {
+private:
+    int num;
+
+public:
+    PrimeCheck(int n) : num(n) {
+        cout << "Checking if " << num << " can be expressed as the sum of two prime numbers.\n";
+    }
+    void checkSumOfPrimes() {
+        bool found = false;
+        for (int i = 2; i <= num / 2; i++) {
+            if (isPrime(i) && isPrime(num - i)) {
+                cout << num << " = " << i << " + " << (num - i) << "\n";
+                found = true;
+            }
+        }
+        if (!found) {
+            cout << num << " cannot be expressed as the sum of two prime numbers.\n";
+        }
+    }
+    ~PrimeCheck() {
+        cout << "Destruction of the object is completed.\n";
+    }
+};
+
+int main() {
+    int n;
+    cout << "Enter a positive integer: ";
+    cin >> n;
+    PrimeCheck primeObj(n);
+    primeObj.checkSumOfPrimes();
+
+    return 0;
+}
